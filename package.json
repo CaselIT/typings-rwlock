@@ -1,0 +1,15 @@
+{
+  "name": "typings-rwlock",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "build": "echo building... && typings bundle -o out",
+    "test": "npm run build && tsc && nodeunit test/test.js"
+  },
+  "devDependencies": {
+    "typescript": "^1.8.10",
+    "typings": "^0.7.12",
+    "rwlock": "^5.0.0",
+    "nodeunit": "^0.9.1"
+  }
+}

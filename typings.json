@@ -1,0 +1,10 @@
+{
+  "name": "rwlock",
+  "main": "rwlock.d.ts",
+  "version": "5.0.0",
+  "homepage": "https://github.com/71104/rwlock",
+  "dependencies": {},
+  "ambientDevDependencies": {
+    "node": "registry:dt/node#4.0.0+20160412142033"
+  }
+}
