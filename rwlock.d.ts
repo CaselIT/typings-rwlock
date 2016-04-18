@@ -3,35 +3,35 @@
 // Definitions by: Federico Caselli <https://github.com/CaselIT/typings-rwlock>
 
 declare class ReadWriteGeneric<T> {
-  readLock(callback: T, options?: ReadWriteLock.RWOptions): void;
-  readLock(key: string, callback: T, options?: ReadWriteLock.RWOptions): void;
-  writeLock(callback: T, options?: ReadWriteLock.RWOptions): void;
-  writeLock(key: string, callback: T, options?: ReadWriteLock.RWOptions): void;
+  readLock(callback: T, options?: ReadWriteLock.Options): void;
+  readLock(key: string, callback: T, options?: ReadWriteLock.Options): void;
+  writeLock(callback: T, options?: ReadWriteLock.Options): void;
+  writeLock(key: string, callback: T, options?: ReadWriteLock.Options): void;
 }
 
 declare namespace ReadWriteLock {
-  interface RWRelease {
+  interface Release {
     (): void;
   }
 
-  interface RWCallback {
-    (release: RWRelease): void;
+  interface Callback {
+    (release: Release): void;
   }
 
-  interface RWAsyncCallback {
-    (err: Error, release: RWRelease): void;
+  interface AsyncCallback {
+    (err: Error, release: Release): void;
   }
 
-  interface RWOptions {
+  interface Options {
     scope?: any;
     timeout?: number;
     timeoutCallback?: () => void;
   }
 }
 
-declare class ReadWriteLock extends ReadWriteGeneric<ReadWriteLock.RWCallback>{
+declare class ReadWriteLock extends ReadWriteGeneric<ReadWriteLock.Callback>{
   constructor();
-  async: ReadWriteGeneric<ReadWriteLock.RWAsyncCallback>;
+  async: ReadWriteGeneric<ReadWriteLock.AsyncCallback>;
 }
 
 export = ReadWriteLock;
