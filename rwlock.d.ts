@@ -1,6 +1,6 @@
 // Type definitions for Joint JS 0.9.7
 // Project: https://github.com/71104/rwlock
-// Definitions by: Federico Caselli <https://github.com/CaselIT/typings-jointjs>
+// Definitions by: Federico Caselli <https://github.com/CaselIT/typings-rwlock>
 
 declare class ReadWriteGeneric<T> {
   readLock(callback: T, options?: ReadWriteLock.RWOptions): void;
